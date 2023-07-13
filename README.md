@@ -1,4 +1,7 @@
 # Cordova wheel selector plugin
+
+Notorious addition: iOS text won't be truncated if it's too long (but it will create new lines)
+
 Native wheel selector for Cordova (Android/iOS).
 
 Can use in Cordova or Ionic (v1 or v2) frameworks, calls native API's so no clunky javascript used.  Can send in as many *data sets* as needed, the UI will *grow* or *shrink* accordingly (see examples for info).
