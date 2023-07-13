@@ -129,6 +129,14 @@ typedef NS_ENUM(NSInteger, SelectorResultType) {
   [label setBackgroundColor:[UIColor clearColor]];
   [label setText:[_options objectForKey:@"title"]];
 
+  // 30/06/2023 additions
+  [label setNumberOfLines:0]; // Allow multiple lines
+  [label setLineBreakMode:NSLineBreakByWordWrapping]; // Wrap text by word
+  CGSize maxSize = CGSizeMake(self.viewSize.width - 16, CGFLOAT_MAX); // Set maximum width for label
+  CGSize labelSize = [label sizeThatFits:maxSize]; // Calculate the size required to fit the text
+  [label setFrame:CGRectMake(0, 0, labelSize.width, labelSize.height)]; // Set label's frame with calculated size
+  // End of the additions
+
   UIBarButtonItem *labelButton = [[UIBarButtonItem alloc] initWithCustomView:label];
   UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
   [buttons addObject:flexSpace];
